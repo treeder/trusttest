@@ -7,9 +7,10 @@ FROM gitpod/workspace-full
 # More information: https://www.gitpod.io/docs/config-docker/
 
 # Install Flutter
+RUN echo $(pwd)
 RUN wget https://storage.googleapis.com/flutter_infra/releases/beta/linux/flutter_linux_1.24.0-10.2.pre-beta.tar.xz
 RUN tar xf flutter_linux_1.24.0-10.2.pre-beta.tar.xz
-ENV PATH "$PATH:/root/flutter/bin"
+ENV PATH "$PATH:/home/gitpod/flutter/bin"
 RUN rm flutter_linux_1.24.0-10.2.pre-beta.tar.xz
 RUN flutter channel beta
 RUN flutter config --enable-web
